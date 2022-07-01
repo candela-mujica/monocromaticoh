@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script>
+          document.addEventListener("DOMContentLoaded", () =>{
+            const root = document.querySelector("#root");
+            
+            const AlbumImage = (params) => {
+                return `
+                <div>
+                    <img src="${params.src}" alt="">
+                    <p>${params.title}</p>
+                </div>
+                `
+            }
+
+            const App = () => {
+                return `
+                    <h1>Álbum de fotos</h1>
+                    ${AlbumImage({src:"Imagenes/Anillo Mostacillas.webp", title: "Imagen 1"})}
+                    ${AlbumImage({src:"Imagenes/Anillo de alambre.webp", title: "Imagen 2"})}
+                `
+            };
+
+            root.innerHTML = App();
+          })
+      </script>
+  </body>
+</html>
